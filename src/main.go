@@ -20,7 +20,7 @@ var (
 
 func main() {
 	//Load tokens
-	err := godotenv.Load(".env")
+	err := godotenv.Load("../.env")
 	if err != nil {
 		log.Fatalf("Error loading environment variables file")
 	}
