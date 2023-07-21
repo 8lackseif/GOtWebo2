@@ -12,12 +12,6 @@ import (
 	"github.com/joho/godotenv"
 )
 
-var (
-	integerOptionMinValue          = 1.0
-	dmPermission                   = false
-	defaultMemberPermissions int64 = discordgo.PermissionManageServer
-)
-
 func main() {
 	//Load tokens
 	err := godotenv.Load("../.env")
@@ -25,30 +19,27 @@ func main() {
 		log.Fatalf("Error loading environment variables file")
 	}
 
+	//CREATE BOT
 	dg, err := discordgo.New("Bot " + os.Getenv("DISCORD_TOKEN"))
 	if err != nil {
 		fmt.Println("error creating Discord session,", err)
 		return
 	}
-	// Register the messageCreate func as a callback for MessageCreate events.
 
+	//ADDING HANDLERS
 	dg.AddHandler(func(s *discordgo.Session, i *discordgo.InteractionCreate) {
 		if h, ok := commands.CommandHandlers[i.ApplicationCommandData().Name]; ok {
 			h(s, i)
 		}
 	})
 
-	// Just like the ping pong example, we only care about receiving message
-	// events in this example.
-	dg.Identify.Intents = discordgo.IntentsGuildMessages
-
-	// Open a websocket connection to Discord and begin listening.
+	//OPEN BOT
 	err = dg.Open()
 	if err != nil {
 		fmt.Println("error opening connection,", err)
 		return
 	}
-
+	// REGISTER COMMANDS
 	registeredCommands := make([]*discordgo.ApplicationCommand, len(commands.Commands))
 	for i, v := range commands.Commands {
 		cmd, err := dg.ApplicationCommandCreate(dg.State.User.ID, "", v)
