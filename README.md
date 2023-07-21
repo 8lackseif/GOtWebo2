@@ -1,2 +1,2 @@
-# BotWebo2 IN GOLANG
+# GOtWebo2
 
