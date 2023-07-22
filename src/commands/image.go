@@ -8,7 +8,7 @@ func init() {
 
 	Commands = append(Commands, &discordgo.ApplicationCommand{
 		Name:        "image",
-		Description: "send image",
+		Description: "/image [no|yes|haachama|pekora|smug|pray|please|trembling]",
 		Options: []*discordgo.ApplicationCommandOption{
 			{
 				Type:        discordgo.ApplicationCommandOptionString,
@@ -40,10 +40,17 @@ func init() {
 		}
 
 		option := optionMap["string-option"]
+
+		ret := images[option.StringValue()]
+
+		if ret == "" {
+			ret = "Cannot find the image " + option.StringValue()
+		}
+
 		s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 			Type: discordgo.InteractionResponseChannelMessageWithSource,
 			Data: &discordgo.InteractionResponseData{
-				Content: images[option.StringValue()],
+				Content: ret,
 			},
 		})
 	}
