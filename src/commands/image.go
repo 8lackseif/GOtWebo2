@@ -5,7 +5,7 @@ import (
 )
 
 func init() {
-
+	//declare command
 	Commands = append(Commands, &discordgo.ApplicationCommand{
 		Name:        "image",
 		Description: "/image [no|yes|haachama|pekora|smug|pray|please|trembling]",
@@ -18,7 +18,7 @@ func init() {
 			},
 		},
 	})
-
+	//declare command function
 	CommandHandlers["image"] = func(s *discordgo.Session, i *discordgo.InteractionCreate) {
 		// Access options in the order provided by the user.
 		options := i.ApplicationCommandData().Options
