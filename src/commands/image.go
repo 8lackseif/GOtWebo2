@@ -13,7 +13,7 @@ func init() {
 			{
 				Type:        discordgo.ApplicationCommandOptionString,
 				Name:        "string-option",
-				Description: "String option",
+				Description: "word_from _list",
 				Required:    true,
 			},
 		},

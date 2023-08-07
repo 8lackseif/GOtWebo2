@@ -1,6 +1,7 @@
 package danbooru
 
 import (
+	"botwebo2/lib/embed"
 	"botwebo2/lib/myRequests"
 	"encoding/json"
 	"fmt"
@@ -19,12 +20,13 @@ type Tag struct {
 	Words        []string  `json:"words"`
 }
 
-func SendDanbooruImage(tag string) (string, error) {
+func SendDanbooruImage(tag string) (embed.Embed, error) {
+	message := embed.NewEmbed()
 
 	response, err := myRequests.GetByteResponse("https://danbooru.donmai.us/posts/random.json?tags=" + tag)
 
 	if err != nil {
-		return "error getting request", err
+		return *message.SetColor(embed.ErrorColor).SetDescription("error getting request"), err
 	}
 
 	sec := map[string]interface{}{}
@@ -32,7 +34,7 @@ func SendDanbooruImage(tag string) (string, error) {
 	err = json.Unmarshal(response, &sec)
 
 	if err != nil {
-		return "error json decode", err
+		return *message.SetColor(embed.ErrorColor).SetDescription("error json decode"), err
 	}
 
 	image := ""
@@ -41,11 +43,13 @@ func SendDanbooruImage(tag string) (string, error) {
 		image = fmt.Sprintf("%v", sec["file_url"])
 	}
 
-	return image, err
+	return *message.SetColor(embed.SuccessColor).SetImage(image), err
 
 }
 
-func GetSimilarTags(tag string) (string, error) {
+func GetSimilarTags(tag string) (embed.Embed, error) {
+	message := embed.NewEmbed()
+
 	response1, err := myRequests.GetByteResponse("https://danbooru.donmai.us/tags.json" +
 		"?limit=5" +
 		"&search[hide_empty]=true" +
@@ -53,7 +57,7 @@ func GetSimilarTags(tag string) (string, error) {
 		"&search[fuzzy_name_matches]=" + tag)
 
 	if err != nil {
-		return "error getting request", err
+		return *message.SetColor(embed.ErrorColor).SetDescription("error getting request"), err
 	}
 
 	var tags []Tag
@@ -63,7 +67,7 @@ func GetSimilarTags(tag string) (string, error) {
 	err = json.Unmarshal(response1, &temp)
 
 	if err != nil {
-		return "error json decode", err
+		return *message.SetColor(embed.ErrorColor).SetDescription("error json decode"), err
 	}
 
 	for _, tag := range temp {
@@ -77,13 +81,13 @@ func GetSimilarTags(tag string) (string, error) {
 		"&search[name_or_alias_matches]=*" + tag + "*")
 
 	if err != nil {
-		return "error getting request", err
+		return *message.SetColor(embed.ErrorColor).SetDescription("error getting request"), err
 	}
 
 	err = json.Unmarshal(response2, &temp)
 
 	if err != nil {
-		return "error json decode", err
+		return *message.SetColor(embed.ErrorColor).SetDescription("error json decode"), err
 	}
 
 	for _, tag := range temp {
@@ -94,13 +98,13 @@ func GetSimilarTags(tag string) (string, error) {
 		return tags[i].PostCount > tags[j].PostCount
 	})
 
-	similars := "Maybe you mean: "
+	message.SetTitle("Maybe you mean: ").SetColor(embed.SuccessColor)
 
 	for _, tag := range tags {
-		similars += "\n -" + tag.Name
+		message.AddField("", tag.Name)
 	}
 
-	return similars, nil
+	return *message, nil
 }
 
 func GetRandomImage() {

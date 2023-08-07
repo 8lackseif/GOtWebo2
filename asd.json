@@ -1,0 +1,442 @@
+{
+    "header": {
+        "user_id": "111731",
+        "account_type": "1",
+        "short_limit": "4",
+        "long_limit": "100",
+        "long_remaining": 81,
+        "short_remaining": 2,
+        "status": 0,
+        "results_requested": "8",
+        "index": {
+            "0": {
+                "status": 0,
+                "parent_id": 0,
+                "id": 0,
+                "results": 8
+            },
+            "2": {
+                "status": 0,
+                "parent_id": 2,
+                "id": 2,
+                "results": 8
+            },
+            "5": {
+                "status": 0,
+                "parent_id": 5,
+                "id": 5,
+                "results": 8
+            },
+            "51": {
+                "status": 0,
+                "parent_id": 5,
+                "id": 51,
+                "results": 8
+            },
+            "52": {
+                "status": 0,
+                "parent_id": 5,
+                "id": 52,
+                "results": 8
+            },
+            "53": {
+                "status": 0,
+                "parent_id": 5,
+                "id": 53,
+                "results": 8
+            },
+            "6": {
+                "status": 0,
+                "parent_id": 6,
+                "id": 6,
+                "results": 8
+            },
+            "8": {
+                "status": 0,
+                "parent_id": 8,
+                "id": 8,
+                "results": 8
+            },
+            "9": {
+                "status": 0,
+                "parent_id": 9,
+                "id": 9,
+                "results": 16
+            },
+            "10": {
+                "status": 0,
+                "parent_id": 10,
+                "id": 10,
+                "results": 8
+            },
+            "11": {
+                "status": 0,
+                "parent_id": 11,
+                "id": 11,
+                "results": 8
+            },
+            "12": {
+                "status": 0,
+                "parent_id": 9,
+                "id": 12,
+                "results": 16
+            },
+            "16": {
+                "status": 0,
+                "parent_id": 16,
+                "id": 16,
+                "results": 8
+            },
+            "18": {
+                "status": 0,
+                "parent_id": 18,
+                "id": 18,
+                "results": 8
+            },
+            "19": {
+                "status": 0,
+                "parent_id": 19,
+                "id": 19,
+                "results": 8
+            },
+            "20": {
+                "status": 0,
+                "parent_id": 20,
+                "id": 20,
+                "results": 8
+            },
+            "21": {
+                "status": 0,
+                "parent_id": 21,
+                "id": 21,
+                "results": 8
+            },
+            "211": {
+                "status": 0,
+                "parent_id": 21,
+                "id": 211,
+                "results": 8
+            },
+            "22": {
+                "status": 0,
+                "parent_id": 22,
+                "id": 22,
+                "results": 8
+            },
+            "23": {
+                "status": 0,
+                "parent_id": 23,
+                "id": 23,
+                "results": 8
+            },
+            "24": {
+                "status": 0,
+                "parent_id": 24,
+                "id": 24,
+                "results": 8
+            },
+            "25": {
+                "status": 0,
+                "parent_id": 9,
+                "id": 25,
+                "results": 16
+            },
+            "26": {
+                "status": 0,
+                "parent_id": 9,
+                "id": 26,
+                "results": 16
+            },
+            "27": {
+                "status": 0,
+                "parent_id": 9,
+                "id": 27,
+                "results": 16
+            },
+            "28": {
+                "status": 0,
+                "parent_id": 9,
+                "id": 28,
+                "results": 16
+            },
+            "29": {
+                "status": 0,
+                "parent_id": 9,
+                "id": 29,
+                "results": 16
+            },
+            "30": {
+                "status": 0,
+                "parent_id": 9,
+                "id": 30,
+                "results": 16
+            },
+            "31": {
+                "status": 0,
+                "parent_id": 31,
+                "id": 31,
+                "results": 8
+            },
+            "32": {
+                "status": 0,
+                "parent_id": 32,
+                "id": 32,
+                "results": 8
+            },
+            "33": {
+                "status": 0,
+                "parent_id": 33,
+                "id": 33,
+                "results": 8
+            },
+            "34": {
+                "status": 0,
+                "parent_id": 34,
+                "id": 34,
+                "results": 8
+            },
+            "341": {
+                "status": 0,
+                "parent_id": 341,
+                "id": 341,
+                "results": 8
+            },
+            "35": {
+                "status": 0,
+                "parent_id": 35,
+                "id": 35,
+                "results": 8
+            },
+            "36": {
+                "status": 0,
+                "parent_id": 36,
+                "id": 36,
+                "results": 8
+            },
+            "37": {
+                "status": 0,
+                "parent_id": 37,
+                "id": 37,
+                "results": 8
+            },
+            "371": {
+                "status": 0,
+                "parent_id": 371,
+                "id": 371,
+                "results": 8
+            },
+            "38": {
+                "status": 0,
+                "parent_id": 38,
+                "id": 38,
+                "results": 8
+            },
+            "39": {
+                "status": 0,
+                "parent_id": 39,
+                "id": 39,
+                "results": 8
+            },
+            "40": {
+                "status": 0,
+                "parent_id": 40,
+                "id": 40,
+                "results": 8
+            },
+            "41": {
+                "status": 0,
+                "parent_id": 41,
+                "id": 41,
+                "results": 8
+            },
+            "42": {
+                "status": 0,
+                "parent_id": 42,
+                "id": 42,
+                "results": 8
+            },
+            "43": {
+                "status": 0,
+                "parent_id": 43,
+                "id": 43,
+                "results": 8
+            },
+            "44": {
+                "status": 0,
+                "parent_id": 44,
+                "id": 44,
+                "results": 8
+            }
+        },
+        "search_depth": "128",
+        "minimum_similarity": 43.44,
+        "query_image_display": "\/userdata\/o9IydbUFY.jpg.png",
+        "query_image": "o9IydbUFY.jpg",
+        "results_returned": 8
+    },
+    "results": [
+        {
+            "header": {
+                "similarity": "96.05",
+                "thumbnail": "https:\/\/img3.saucenao.com\/booru\/a\/3\/a3aeb702c3a2c22de8847a9ab75957bb_2.jpg?auth=fuXBXPFgnri46k5vy2IW9A\u0026exp=1691521200",
+                "index_id": 9,
+                "index_name": "Index #9: Danbooru - a3aeb702c3a2c22de8847a9ab75957bb_0.jpg",
+                "dupes": 1,
+                "hidden": 0
+            },
+            "data": {
+                "ext_urls": [
+                    "https:\/\/danbooru.donmai.us\/post\/show\/6567704",
+                    "https:\/\/gelbooru.com\/index.php?page=post\u0026s=view\u0026id=8866525"
+                ],
+                "danbooru_id": 6567704,
+                "gelbooru_id": 8866525,
+                "creator": "meiji ken",
+                "material": "fate\/apocrypha, fate (series)",
+                "characters": "mordred (fate), mordred (fate\/apocrypha)",
+                "source": "https:\/\/twitter.com\/MEIJI_PKMN\/status\/1688520364794785792"
+            }
+        },
+        {
+            "header": {
+                "similarity": "42.44",
+                "thumbnail": "https:\/\/img3.saucenao.com\/booru\/d\/5\/d509cf7c770455b4d2d55c5479a33d9c_6.jpg?auth=jUqnlbh4S-p_QEkTpYtEOA\u0026exp=1691521200",
+                "index_id": 29,
+                "index_name": "Index #29: e621.net - d509cf7c770455b4d2d55c5479a33d9c_6.jpg",
+                "dupes": 0,
+                "hidden": 0
+            },
+            "data": {
+                "ext_urls": [
+                    "https:\/\/e621.net\/post\/show\/2090678"
+                ],
+                "e621_id": 2090678,
+                "creator": "warr",
+                "material": "",
+                "characters": "",
+                "source": "https:\/\/www.pixiv.net\/en\/artworks\/78400751#big_0"
+            }
+        },
+        {
+            "header": {
+                "similarity": "42.34",
+                "thumbnail": "https:\/\/img1.saucenao.com\/res\/pixiv\/7840\/78400751_p0_master1200.jpg?auth=m_Dspz3c87pAltj0mYH8ZQ\u0026exp=1691521200",
+                "index_id": 5,
+                "index_name": "Index #5: Pixiv Images - 78400751_p0_master1200.jpg",
+                "dupes": 0,
+                "hidden": 0
+            },
+            "data": {
+                "ext_urls": [
+                    "https:\/\/www.pixiv.net\/member_illust.php?mode=medium\u0026illust_id=78400751"
+                ],
+                "title": "[12\/21]doodle",
+                "pixiv_id": 78400751,
+                "member_name": "Warr",
+                "member_id": 3939201
+            }
+        },
+        {
+            "header": {
+                "similarity": "41.56",
+                "thumbnail": "https:\/\/img3.saucenao.com\/skeb\/571\/571491-1004543-kodake_555%2Bworks%2B42-0.jpg?auth=fGdaA7JX3uuiDZBpzi9UWg\u0026exp=1691521200",
+                "index_id": 44,
+                "index_name": "Index #44: Skeb - 571491-1004543-kodake_555+works+42-0.jpg",
+                "dupes": 0,
+                "hidden": 0
+            },
+            "data": {
+                "ext_urls": [
+                    "https:\/\/skeb.jp\/\/@kodake_555\/works\/42"
+                ],
+                "path": "\/@kodake_555\/works\/42",
+                "creator": "@kodake_555",
+                "creator_name": "\u30b3\u30c0\u30b1",
+                "author_name": null,
+                "author_url": "https:\/\/skeb.jp\/@kodake_555"
+            }
+        },
+        {
+            "header": {
+                "similarity": "41.41",
+                "thumbnail": "https:\/\/img1.saucenao.com\/res\/mangadex\/458\/458304\/x28.jpg?auth=4dUgp3-X1uLCgbFeFnwGnw\u0026exp=1691521200",
+                "index_id": 37,
+                "index_name": "Index #37: MangaDex - x28.jpg",
+                "dupes": 0,
+                "hidden": 0
+            },
+            "data": {
+                "ext_urls": [
+                    "https:\/\/mangadex.org\/chapter\/9afe9e5c-379f-400f-bddd-c65cefe18eb1\/",
+                    "https:\/\/www.mangaupdates.com\/series.html?id=16800",
+                    "https:\/\/myanimelist.net\/manga\/3941\/"
+                ],
+                "md_id": "9afe9e5c-379f-400f-bddd-c65cefe18eb1",
+                "mu_id": 16800,
+                "mal_id": 3941,
+                "source": "Tomoyo After ~Dear Shining Memories~",
+                "part": " - Chapter 4",
+                "artist": "Sumiyoshi Yukiko",
+                "author": "Key"
+            }
+        },
+        {
+            "header": {
+                "similarity": "41.40",
+                "thumbnail": "https:\/\/img3.saucenao.com\/skeb\/571\/571491-1004543-kodake_555%2Bworks%2B42-1.jpg?auth=-lvAE1SyV_OrMlhnFQDbKw\u0026exp=1691521200",
+                "index_id": 44,
+                "index_name": "Index #44: Skeb - 571491-1004543-kodake_555+works+42-1.jpg",
+                "dupes": 0,
+                "hidden": 0
+            },
+            "data": {
+                "ext_urls": [
+                    "https:\/\/skeb.jp\/\/@kodake_555\/works\/42"
+                ],
+                "path": "\/@kodake_555\/works\/42",
+                "creator": "@kodake_555",
+                "creator_name": "\u30b3\u30c0\u30b1",
+                "author_name": null,
+                "author_url": "https:\/\/skeb.jp\/@kodake_555"
+            }
+        },
+        {
+            "header": {
+                "similarity": "41.00",
+                "thumbnail": "https:\/\/img3.saucenao.com\/dA\/29187\/291875960.jpg?auth=rbenUyuUqwX-_lMwVt2cug\u0026exp=1691521200",
+                "index_id": 34,
+                "index_name": "Index #34: deviantArt - 291875960.jpg",
+                "dupes": 0,
+                "hidden": 0
+            },
+            "data": {
+                "ext_urls": [
+                    "https:\/\/deviantart.com\/view\/291875960"
+                ],
+                "title": "Nelly Raimon-Inazuma Eleven",
+                "da_id": "291875960",
+                "author_name": "XxLady-MinaxX",
+                "author_url": "http:\/\/xxlady-minaxx.deviantart.com"
+            }
+        },
+        {
+            "header": {
+                "similarity": "39.70",
+                "thumbnail": "https:\/\/img1.saucenao.com\/res\/pixiv\/10626\/manga\/106265822_p23.jpg?auth=mPGRrHWAkewT-kNYwwODHw\u0026exp=1691521200",
+                "index_id": 5,
+                "index_name": "Index #5: Pixiv Images - 106265822_p23.jpg",
+                "dupes": 0,
+                "hidden": 0
+            },
+            "data": {
+                "ext_urls": [
+                    "https:\/\/www.pixiv.net\/member_illust.php?mode=medium\u0026illust_id=106265822"
+                ],
+                "title": "Game of Thrones #1",
+                "pixiv_id": 106265822,
+                "member_name": "Club2Girls",
+                "member_id": 81493154
+            }
+        }
+    ]
+}

@@ -16,7 +16,7 @@ func init() {
 			{
 				Type:        discordgo.ApplicationCommandOptionString,
 				Name:        "string-option",
-				Description: "String option",
+				Description: "danbooru_tag",
 				Required:    false,
 			},
 		},
@@ -44,27 +44,25 @@ func init() {
 		}
 
 		//get random image
-		randomImage, err := danbooru.SendDanbooruImage(tag)
+		embed, err := danbooru.SendDanbooruImage(tag)
+
+		//variables
 
 		if err != nil {
 			log.Fatalln(err)
 		}
 
 		//get similar tags if cannot find tag matches
-		if randomImage == "" {
-			randomImage, err = danbooru.GetSimilarTags(option.StringValue())
+		if embed.Image.URL == "" {
+
+			embed, err = danbooru.GetSimilarTags(option.StringValue())
 
 			if err != nil {
 				log.Fatalln(err)
 			}
 		}
 
-		//return message to user
-		s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
-			Type: discordgo.InteractionResponseChannelMessageWithSource,
-			Data: &discordgo.InteractionResponseData{
-				Content: randomImage,
-			},
-		})
+		//return embed to user
+		s.ChannelMessageSendEmbed(i.ChannelID, embed.MessageEmbed)
 	}
 }
