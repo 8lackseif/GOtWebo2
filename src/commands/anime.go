@@ -1,7 +1,7 @@
 package commands
 
 import (
-	"botwebo2/lib/sauces"
+	"botwebo2/lib/animeStuff"
 
 	"github.com/bwmarrin/discordgo"
 )
@@ -9,19 +9,19 @@ import (
 func init() {
 	//declare command
 	Commands = append(Commands, &discordgo.ApplicationCommand{
-		Name:        "sauce",
-		Description: "/sauce [image_url]",
+		Name:        "anime",
+		Description: "/anime [anime_name]",
 		Options: []*discordgo.ApplicationCommandOption{
 			{
 				Type:        discordgo.ApplicationCommandOptionString,
 				Name:        "string-option",
-				Description: "image_url",
+				Description: "anime_name",
 				Required:    true,
 			},
 		},
 	})
 	//declare command function
-	CommandHandlers["sauce"] = func(s *discordgo.Session, i *discordgo.InteractionCreate) {
+	CommandHandlers["anime"] = func(s *discordgo.Session, i *discordgo.InteractionCreate) {
 		// Access options in the order provided by the user.
 		options := i.ApplicationCommandData().Options
 
@@ -31,8 +31,7 @@ func init() {
 		}
 		option := optionMap["string-option"]
 
-		message, err := sauces.GetSauce(option.StringValue())
-
+		message, err := animeStuff.TimeUntilAiring(option.StringValue())
 		if err != nil {
 			println(err)
 		}

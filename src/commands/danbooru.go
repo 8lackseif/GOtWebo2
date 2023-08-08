@@ -2,7 +2,6 @@ package commands
 
 import (
 	"botwebo2/lib/danbooru"
-	"log"
 
 	"github.com/bwmarrin/discordgo"
 )
@@ -49,7 +48,7 @@ func init() {
 		//variables
 
 		if err != nil {
-			log.Fatalln(err)
+			println(err)
 		}
 
 		//get similar tags if cannot find tag matches
@@ -58,7 +57,7 @@ func init() {
 			embed, err = danbooru.GetSimilarTags(option.StringValue())
 
 			if err != nil {
-				log.Fatalln(err)
+				println(err)
 			}
 		}
 

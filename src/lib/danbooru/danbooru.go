@@ -21,6 +21,7 @@ type Tag struct {
 }
 
 func SendDanbooruImage(tag string) (embed.Embed, error) {
+	//create embed
 	message := embed.NewEmbed()
 
 	response, err := myRequests.GetByteResponse("https://danbooru.donmai.us/posts/random.json?tags=" + tag)
