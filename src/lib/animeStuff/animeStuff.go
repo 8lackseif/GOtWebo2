@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-var (
+const (
 	graphql = "https://graphql.anilist.co"
 
 	query = `query($name: String) {

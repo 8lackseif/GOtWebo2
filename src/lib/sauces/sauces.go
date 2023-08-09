@@ -9,7 +9,7 @@ import (
 	"strconv"
 )
 
-var (
+const (
 	apiCall = "https://saucenao.com/search.php?output_type=2&api_key=%s&url=%s"
 )
 
