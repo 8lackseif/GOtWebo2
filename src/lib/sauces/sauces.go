@@ -86,6 +86,7 @@ func GetSauce(url string) (embed.Embed, error) {
 	} else if sauces.Header.Status == 0 {
 
 		//filter and resume content
+		count := 0
 		for ind, result := range sauces.Results {
 
 			s, err := strconv.ParseFloat(result.Header.Similarity, 64)
@@ -118,12 +119,19 @@ func GetSauce(url string) (embed.Embed, error) {
 					} else if content != "" {
 						msg += key + ": " + fmt.Sprintf("%v", content) + "\n"
 					}
+				}
 
+				if msg == "" {
+					msg = "sauce not supported"
 				}
 
 				message.AddField(strconv.Itoa(ind+1)+")", msg)
-
+				count++
 			}
+		}
+
+		if count == 0 {
+			message.SetDescription("no similarities found")
 		}
 
 	}

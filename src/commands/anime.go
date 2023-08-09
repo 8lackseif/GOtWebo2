@@ -6,6 +6,11 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
+const (
+	ANIME_CHANNEL = "anime-webonews"
+	MANGA_CHANNEL = "manga-webonews"
+)
+
 func init() {
 	//declare command
 	Commands = append(Commands, &discordgo.ApplicationCommand{

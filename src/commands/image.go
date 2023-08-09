@@ -12,7 +12,7 @@ func init() {
 		Options: []*discordgo.ApplicationCommandOption{
 			{
 				Type:        discordgo.ApplicationCommandOptionString,
-				Name:        "word_from _list",
+				Name:        "word_from_list",
 				Description: "[no|yes|haachama|pekora|smug|pray|please|trembling]",
 				Required:    true,
 			},
@@ -39,7 +39,7 @@ func init() {
 			"trembling": "https://cdn.discordapp.com/attachments/709788450408366162/972992631456030830/the-quintessential-quintuplets-itsuki.gif",
 		}
 
-		option := optionMap["word_from _list"]
+		option := optionMap["word_from_list"]
 
 		ret := images[option.StringValue()]
 

@@ -2,6 +2,7 @@ package main
 
 import (
 	"botwebo2/commands"
+	"botwebo2/functions"
 	"fmt"
 	"log"
 	"os"
@@ -44,10 +45,13 @@ func main() {
 	for i, v := range commands.Commands {
 		cmd, err := dg.ApplicationCommandCreate(dg.State.User.ID, "", v)
 		if err != nil {
-			fmt.Println("Cannot create '%v' command: %v", v.Name, err)
+			fmt.Printf("Cannot create '%s' command: %s\n", v.Name, err.Error())
 		}
 		registeredCommands[i] = cmd
 	}
+
+	//functions
+	go functions.AnimeNews(dg)
 
 	// Wait here until CTRL-C or other term signal is received.
 	fmt.Println("Bot is now running. Press CTRL-C to exit.")
