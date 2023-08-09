@@ -14,7 +14,7 @@ func init() {
 		Options: []*discordgo.ApplicationCommandOption{
 			{
 				Type:        discordgo.ApplicationCommandOptionString,
-				Name:        "string-option",
+				Name:        "image_url",
 				Description: "image_url",
 				Required:    true,
 			},
@@ -29,7 +29,7 @@ func init() {
 		for _, opt := range options {
 			optionMap[opt.Name] = opt
 		}
-		option := optionMap["string-option"]
+		option := optionMap["image_url"]
 
 		message, err := sauces.GetSauce(option.StringValue())
 

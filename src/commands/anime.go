@@ -14,7 +14,7 @@ func init() {
 		Options: []*discordgo.ApplicationCommandOption{
 			{
 				Type:        discordgo.ApplicationCommandOptionString,
-				Name:        "string-option",
+				Name:        "anime_name",
 				Description: "anime_name",
 				Required:    true,
 			},
@@ -29,7 +29,7 @@ func init() {
 		for _, opt := range options {
 			optionMap[opt.Name] = opt
 		}
-		option := optionMap["string-option"]
+		option := optionMap["anime_name"]
 
 		message, err := animeStuff.TimeUntilAiring(option.StringValue())
 		if err != nil {

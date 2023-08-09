@@ -14,7 +14,7 @@ func init() {
 		Options: []*discordgo.ApplicationCommandOption{
 			{
 				Type:        discordgo.ApplicationCommandOptionString,
-				Name:        "string-option",
+				Name:        "danbooru_tag",
 				Description: "danbooru_tag",
 				Required:    false,
 			},
@@ -31,7 +31,7 @@ func init() {
 			optionMap[opt.Name] = opt
 		}
 
-		option := optionMap["string-option"]
+		option := optionMap["danbooru_tag"]
 
 		//check if option exists
 		var tag string
