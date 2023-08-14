@@ -1,32 +1,28 @@
 package commands
 
 import (
-	"botwebo2/lib/animeStuff"
+	"botwebo2/lib/music"
 
 	"github.com/bwmarrin/discordgo"
-)
-
-const (
-	ANIME_CHANNEL = "anime-webonews"
-	MANGA_CHANNEL = "manga-webonews"
 )
 
 func init() {
 	//declare command
 	Commands = append(Commands, &discordgo.ApplicationCommand{
-		Name:        "anime",
-		Description: "/anime [anime_name]",
+		Name:        "rplay",
+		Description: "/rplay [anilist_user|stop|song|skip]",
 		Options: []*discordgo.ApplicationCommandOption{
 			{
 				Type:        discordgo.ApplicationCommandOptionString,
-				Name:        "anime_name",
-				Description: "anime_name",
+				Name:        "option",
+				Description: "[anilist_user|stop|song|skip]",
 				Required:    true,
 			},
 		},
 	})
 	//declare command function
-	CommandHandlers["anime"] = func(s *discordgo.Session, i *discordgo.InteractionCreate) {
+	CommandHandlers["rplay"] = func(s *discordgo.Session, i *discordgo.InteractionCreate) {
+
 		// Access options in the order provided by the user.
 		options := i.ApplicationCommandData().Options
 
@@ -34,14 +30,16 @@ func init() {
 		for _, opt := range options {
 			optionMap[opt.Name] = opt
 		}
-		option := optionMap["anime_name"]
 
-		message, err := animeStuff.TimeUntilAiring(option.StringValue())
+		option := optionMap["option"]
+
+		embed, err := music.Rplay(option.StringValue(), i.GuildID)
+
 		if err != nil {
 			println(err)
 		}
 
-		s.ChannelMessageSendEmbed(i.ChannelID, message.MessageEmbed)
+		s.ChannelMessageSendEmbed(i.ChannelID, embed.MessageEmbed)
 		s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
 			Type: discordgo.InteractionResponseChannelMessageWithSource,
 			Data: &discordgo.InteractionResponseData{

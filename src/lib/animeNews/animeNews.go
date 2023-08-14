@@ -74,6 +74,7 @@ func CheckNews() ([]string, []string, error) {
 	}
 
 	//update last new date
+	println("last time checked: " + lastTimeChecked.String() + ", last news published time: " + news.Entries[0].Published.String())
 	lastTimeChecked = news.Entries[0].Published
 
 	return animeNews, mangaNews, nil

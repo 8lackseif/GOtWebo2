@@ -14,23 +14,24 @@ import (
 )
 
 func main() {
+	//bot and commands
+
 	//Load tokens
 	err := godotenv.Load("../.env")
 	if err != nil {
 		log.Fatalf("Error loading environment variables file")
 	}
 
-	//CREATE BOT
 	dg, err := discordgo.New("Bot " + os.Getenv("DISCORD_TOKEN"))
 	if err != nil {
-		fmt.Println("error creating Discord session,", err)
+		log.Fatalln("error creating Discord session,", err)
 		return
 	}
 
 	//ADDING HANDLERS
 	dg.AddHandler(func(s *discordgo.Session, i *discordgo.InteractionCreate) {
 		if h, ok := commands.CommandHandlers[i.ApplicationCommandData().Name]; ok {
-			h(s, i)
+			go h(s, i)
 		}
 	})
 
@@ -40,15 +41,23 @@ func main() {
 		fmt.Println("error opening connection,", err)
 		return
 	}
+
 	// REGISTER COMMANDS
 	registeredCommands := make([]*discordgo.ApplicationCommand, len(commands.Commands))
-	for i, v := range commands.Commands {
-		cmd, err := dg.ApplicationCommandCreate(dg.State.User.ID, "", v)
-		if err != nil {
-			fmt.Printf("Cannot create '%s' command: %s\n", v.Name, err.Error())
-		}
-		registeredCommands[i] = cmd
+	//create chan for goroutines
+	ch := make(chan *discordgo.ApplicationCommand)
+	//create commands with goroutines
+	for _, v := range commands.Commands {
+		go createCommand(ch, dg, v)
 	}
+	//register commands received from chan
+	go func() {
+		i := 0
+		for cmd := range ch {
+			registeredCommands[i] = cmd
+			i++
+		}
+	}()
 
 	//functions
 	go functions.AnimeNews(dg)
@@ -61,4 +70,12 @@ func main() {
 
 	// Cleanly close down the Discord session.
 	dg.Close()
+}
+
+func createCommand(ch chan *discordgo.ApplicationCommand, dg *discordgo.Session, cmd *discordgo.ApplicationCommand) {
+	cmd, err := dg.ApplicationCommandCreate(dg.State.User.ID, "", cmd)
+	if err != nil {
+		log.Fatalln("Cannot create '%s' command: %s\n" + cmd.Name + err.Error())
+	}
+	ch <- cmd
 }

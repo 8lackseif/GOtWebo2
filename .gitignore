@@ -22,3 +22,8 @@ go.work
 
 #env
 .env
+
+#server audio folder
+serverAudio
+
+

@@ -63,5 +63,11 @@ func init() {
 
 		//return embed to user
 		s.ChannelMessageSendEmbed(i.ChannelID, embed.MessageEmbed)
+		s.InteractionRespond(i.Interaction, &discordgo.InteractionResponse{
+			Type: discordgo.InteractionResponseChannelMessageWithSource,
+			Data: &discordgo.InteractionResponseData{
+				Content: "",
+			},
+		})
 	}
 }
