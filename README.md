@@ -36,11 +36,10 @@ TODO
 
 * [**/danbooru** tags]                                          _Sends a random image from danbooru with the specified tag._
 
-* 
 <h3 id="sauce"> Saucenao commands</h3>
 
 * [**/sauce** url]                                              _Finds the source for the image in the url._
-* 
+
 
 <h3 id="anilist"> Anilist commands</h3>
 
