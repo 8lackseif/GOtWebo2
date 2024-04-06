@@ -58,7 +58,7 @@ Created using the [animenewsnetwork.com](https://www.animenewsnetwork.com) newsf
 [File here](https://www.animenewsnetwork.com/news/atom.xml)
 
 <h3 id="emotes">Emotes</h3>
-The bot will send an image related to the text, try it yourself with /image <text>.
+The bot will send an image related to the text, try it yourself with /image [text].
   
 * yes
 * no
