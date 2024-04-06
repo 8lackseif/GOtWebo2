@@ -13,37 +13,38 @@
 
 
 <h3 id="music"> Music commands </h3>
-YouTube videos and playlist.
+Use command /play with the link of YouTube videos and playlist to add songs.
 
-* [**play** <url/name/number>]
-* [**playlist**]                                               _Shows current playlist._
-* [**loop** <off/single/all>]                                  _Changes current loop settings._
-* [**skip** number]                                            _If no number is provided, skips to the next song._
+<h4>Other arguments of the command to manipulate the list</h4>
+
+* [**list**]                                                   _Shows current playlist._
+* [**loop**]                                                   _Changes current loop settings._
+* [**skip**]                                                   _If no number is provided, skips to the next song._
 * [**song**]                                                   _Displays info about the current song._
 * [**empty**]                                                  _Removes all songs from the playlist._
-* [**remove** number]                                          _Removes specific song from the playlist._
-* [**shuffle**]                                                _Shuffles the playlist._
+
 
 TODO
 * [**rload** <username>]                                       _Loads completed anime list from anilist username._
 * [**rplay**]                                                  _Plays random songs from the anime list loaded._
 * [**rstop**]                                                  _Stop playing random theme._
 * [**ruser**]                                                  _Shows current list owner._
+* [**shuffle**]                                                _Shuffles the playlist._
 
 
 <h3 id="danbooru">Danbooru commands</h3>
 
-* [**danbooru** tags]                                          _Sends a random image from danbooru with the specified tag._
+* [**/danbooru** tags]                                          _Sends a random image from danbooru with the specified tag._
 
 * 
 <h3 id="sauce"> Saucenao commands</h3>
 
-* [**sauce** url]                                              _Finds the source for the image in the url._
+* [**/sauce** url]                                              _Finds the source for the image in the url._
 * 
 
 <h3 id="anilist"> Anilist commands</h3>
 
-* [**anime** name]                                             _Gets the remaining time until the next episode of the specified anime._
+* [**/anime** name]                                             _Gets the remaining time until the next episode of the specified anime._
 
   
 ---
@@ -58,8 +59,8 @@ Created using the [animenewsnetwork.com](https://www.animenewsnetwork.com) newsf
 [File here](https://www.animenewsnetwork.com/news/atom.xml)
 
 <h3 id="emotes">Emotes</h3>
-
-The bot will send an image related to the text, try it yourself
+The bot will send an image related to the text, try it yourself with /image <text>.
+  
 * yes
 * no
 * pray
