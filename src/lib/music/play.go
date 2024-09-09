@@ -164,6 +164,7 @@ func (p *Player) addPlayList(id string) (embed.Embed, error) {
 
 	//add songs to playlist
 	for _, v := range res.Items {
+		println(v.Snippet.ResourceID.VideoID)
 		p.queueMutex.Lock()
 		p.playlist = append(p.playlist, Video{v.Snippet.ResourceID.VideoID, v.Snippet.Title})
 		p.queueMutex.Unlock()
