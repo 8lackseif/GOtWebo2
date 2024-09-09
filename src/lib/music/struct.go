@@ -35,17 +35,17 @@ type Player struct {
 	guildID   string
 	isPlaying bool
 	stopch    chan bool
-	playingch chan bool
+	//playingch chan bool
 
 	//voiceclient
 	voiceClient *discordgo.VoiceConnection
 
 	//youtube
-	playlist      []Video
-	currentSong   Video
-	searchResults []Video
-	looping       bool
-	queueMutex    sync.RWMutex
+	playlist    []Video
+	currentSong Video
+	//searchResults []Video
+	looping    bool
+	queueMutex sync.RWMutex
 
 	//for youtube lists +30
 	playlistID    string
@@ -55,7 +55,7 @@ type Player struct {
 	randomSong      string
 	randongSongSlug string
 	randomSongImage string
-	user            string
+	//user            string
 }
 
 type Video struct {
@@ -64,8 +64,8 @@ type Video struct {
 }
 
 type PkgSong struct {
-	data Video
-	v    *Player
+	//data Video
+	//v    *Player
 }
 
 //youtube videolist struct

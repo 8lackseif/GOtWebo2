@@ -116,7 +116,7 @@ func (p *Player) shuffle() (embed.Embed, error) {
 
 func (p *Player) playSong(v Video) {
 	//download audio
-	cmd := exec.Command("yt-dlp", "-o", "serverAudio/"+p.guildID, "-x", v.VidID)
+	cmd := exec.Command("yt-dlp", "-o", "serverAudio/"+p.guildID, "-x", "--audio-format", "opus", "--force-overwrites", "https://www.youtube.com/watch?v="+v.VidID)
 
 	//get output
 	out, err := cmd.Output()
@@ -291,8 +291,6 @@ func (p *Player) playerLoop() {
 			}
 		}
 	}()
-
-	return
 }
 
 func getYoutubeID(url string) string {
