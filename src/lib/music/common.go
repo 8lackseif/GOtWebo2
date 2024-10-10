@@ -18,7 +18,7 @@ func (p *Player) stop() (embed.Embed, error) {
 
 func (p *Player) song() (embed.Embed, error) {
 	message := embed.NewEmbed()
-	return *message, nil
+	return *message.SetColor(embed.SuccessColor).SetDescription(p.currentSong.Title), nil
 }
 
 func (p *Player) skip() (embed.Embed, error) {
